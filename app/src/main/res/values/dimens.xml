@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //ViewSize
+    <dimen name="size_80dp">80dp</dimen>
+    <dimen name="size_160dp">160dp</dimen>
+
+    //TextSize
+    <dimen name="size_36sp">36sp</dimen>
+
+    //Margin
+    <dimen name="margin_7dp">7dp</dimen>
+</resources>

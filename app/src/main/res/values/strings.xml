@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">ABCTeamApp</string>
+    <string name="app_name">Whac-A-Mole</string>
+    <string name="timer_start_text">30</string>
+    <string name="score_start_text">Score: 0</string>
+    <string name="text_game_over">GAME OVER</string>
+    <string name="play_again_button_text">Play again</string>
+    <string name="return_to_menu_button_text">menu</string>
+    <string name="points_count_init_text">You have # points</string>
+    <string name="play_button_text">PLAY</string>
+    <string name="best_score_init_text">The best SCORE:#</string>
+    <string name="rules_text">RULES: Moles appear in the holes. In 30 seconds, you should hit as many moles as possible.</string>
+    <string name="hole_img_view_desc">holeImgView</string>
 </resources>

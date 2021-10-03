@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="holeStyle">
+        <item name="android:layout_width">@dimen/size_80dp</item>
+        <item name="android:layout_height">@dimen/size_80dp</item>
+        <item name="android:background">@drawable/border</item>
+    </style>
+
+    <style name="moleStyle">
+        <item name="android:layout_width">@dimen/size_80dp</item>
+        <item name="android:layout_height">@dimen/size_80dp</item>
+        <item name="android:alpha">0</item>
+        <item name="android:background">@drawable/border</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:src">@drawable/mole</item>
+    </style>
+</resources>
