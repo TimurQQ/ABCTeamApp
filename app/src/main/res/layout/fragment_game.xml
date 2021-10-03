@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:id="@+id/raw_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/hole0_0"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/border" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/hole0_1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/border" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/hole0_2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/border" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/raw_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/hole1_0"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/border" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/hole1_1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/border" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/hole1_2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/border" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/raw_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/hole2_0"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/border" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/hole2_1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/border" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/hole2_2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/border" />
+        </TableRow>
+
+    </TableLayout>
+
+
+    <TableLayout
+        android:id="@+id/moles"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TableRow
+            android:id="@+id/moles_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/mole0_0"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:alpha="0"
+                android:background="@drawable/border"
+                android:scaleType="fitXY"
+                android:src="@drawable/mole" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/mole0_1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:alpha="0"
+                android:background="@drawable/border"
+                android:scaleType="fitXY"
+                android:src="@drawable/mole" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/mole0_2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:alpha="0"
+                android:background="@drawable/border"
+                android:scaleType="fitXY"
+                android:src="@drawable/mole" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/moles_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/mole1_0"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:alpha="0"
+                android:background="@drawable/border"
+                android:scaleType="fitXY"
+                android:src="@drawable/mole" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/mole1_1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:alpha="0"
+                android:background="@drawable/border"
+                android:scaleType="fitXY"
+                android:src="@drawable/mole" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/mole1_2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:alpha="0"
+                android:background="@drawable/border"
+                android:scaleType="fitXY"
+                android:src="@drawable/mole" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/moles_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/mole2_0"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:alpha="0"
+                android:background="@drawable/border"
+                android:scaleType="fitXY"
+                android:src="@drawable/mole" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/mole2_1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:alpha="0"
+                android:background="@drawable/border"
+                android:scaleType="fitXY"
+                android:src="@drawable/mole" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/mole2_2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:alpha="0"
+                android:background="@drawable/border"
+                android:scaleType="fitXY"
+                android:src="@drawable/mole" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score: "
+        app:layout_constraintEnd_toEndOf="@+id/table"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvScore">
+
+        <TableRow
+            android:id="@+id/hearts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/heart_1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:scaleType="fitXY"
+                android:src="@drawable/heart" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/heart_2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:scaleType="fitXY"
+                android:src="@drawable/heart" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/heart_3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:scaleType="fitXY"
+                android:src="@drawable/heart" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/heart_4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:scaleType="fitXY"
+                android:src="@drawable/heart" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/heart_5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:scaleType="fitXY"
+                android:src="@drawable/heart" />
+        </TableRow>
+
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
