@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav_graph"
+    app:startDestination="@id/StartFragment">
+
+    <fragment
+        android:id="@+id/StartFragment"
+        android:name="com.ilyasov.abcteamapp.presentation.fragments.StartFragment"
+        tools:layout="@layout/fragment_start">
+
+        <action
+            android:id="@+id/action_start_game"
+            app:destination="@id/GameFragment"
+            app:enterAnim="@android:anim/fade_in" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/GameFragment"
+        android:name="com.ilyasov.abcteamapp.presentation.fragments.GameFragment"
+        tools:layout="@layout/fragment_game">
+
+        <action
+            android:id="@+id/action_game_over"
+            app:destination="@id/GameOverFragment"
+            app:enterAnim="@android:anim/fade_in" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/GameOverFragment"
+        android:name="com.ilyasov.abcteamapp.presentation.fragments.GameOverFragment"
+        tools:layout="@layout/fragment_gameover">
+
+        <action
+            android:id="@+id/retry_game"
+            app:destination="@id/GameFragment"
+            app:enterAnim="@android:anim/fade_in" />
+
+        <action
+            android:id="@+id/to_start_menu"
+            app:destination="@id/StartFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:popUpTo="@id/StartFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+</navigation>
