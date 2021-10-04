@@ -4,13 +4,12 @@ import com.ilyasov.abcteamapp.util.BASE_MOVE_SPEED
 
 class Enemy(
     private val deadCallback: () -> Unit,
-    private val updateCallback: (Float) -> Unit,
-    private val heartCallback: () -> Unit
+    private val updateCallback: (Float) -> Unit
 ) :
     Thread() {
     private var deadTimer: Long = BASE_MOVE_SPEED
     private var lastTime = System.nanoTime()
-    var diedFlag = false
+    var diedFlag = f
 
     override fun run() {
         while (!diedFlag) {
@@ -22,7 +21,6 @@ class Enemy(
                 updateCallback.invoke(deadTimer.toFloat() / BASE_MOVE_SPEED)
             } else {
                 diedFlag = true
-                heartCallback.invoke()
                 break
             }
         }

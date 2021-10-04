@@ -2,7 +2,6 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/app_nav_graph"
     app:startDestination="@id/StartFragment">
 
     <fragment
@@ -32,7 +31,7 @@
     <fragment
         android:id="@+id/GameOverFragment"
         android:name="com.ilyasov.abcteamapp.presentation.fragments.GameOverFragment"
-        tools:layout="@layout/fragment_gameover">
+        tools:layout="@layout/fragment_game_over">
 
         <action
             android:id="@+id/retry_game"
@@ -44,7 +43,7 @@
             app:destination="@id/StartFragment"
             app:enterAnim="@android:anim/fade_in"
             app:popUpTo="@id/StartFragment"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
     </fragment>
 
 </navigation>

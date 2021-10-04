@@ -1,14 +1,13 @@
 package com.ilyasov.abcteamapp.presentation.viewmodels
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.ilyasov.abcteamapp.entity.Enemy
 import com.ilyasov.abcteamapp.entity.Hole
 import com.ilyasov.abcteamapp.util.BASE_TIME_TO_RESPAWN
+import com.ilyasov.abcteamapp.util.GAME_END_TIME
 import kotlin.random.Random
 
 class GameEngine : Thread() {
-    private var timeToRespawn = BASE_TIME_TO_RESPAWN
     var places: List<Hole> = listOf(
         Hole(0, null), Hole(1, null), Hole(2, null),
         Hole(3, null), Hole(4, null), Hole(5, null),
@@ -16,86 +15,50 @@ class GameEngine : Thread() {
     )
     val deleteLiveData: MutableLiveData<Hole> = MutableLiveData()
     val animateLiveData: MutableLiveData<Pair<Hole, Float>> = MutableLiveData()
-    val heartLiveData: MutableLiveData<Any?> = MutableLiveData()
-    var simultaneouslyEnemies = 0
-    private var delayTime = timeToRespawn
-    var gameOverFlag = false
-    private var lastTime = System.nanoTime()
-
-    private fun getNewEnemiesCount() {
-        val count: Int = Random.nextInt(100)
-        simultaneouslyEnemies = when {
-            count < 70 -> 1
-            count in 70..89 -> 2
-            count in 90..94 -> 3
-            count in 95..97 -> 4
-            else -> 5
-        }
-    }
+    val endGameLiveData: MutableLiveData<Any?> = MutableLiveData()
+    val secondsLiveData: MutableLiveData<Long> = MutableLiveData()
+    private var delayTime = BASE_TIME_TO_RESPAWN
+    private var startGameTime = System.nanoTime()
+    private var lastTime = startGameTime
 
     override fun run() {
-        while (!gameOverFlag) {
+        while (true) {
             val now = System.nanoTime()
+            secondsLiveData.postValue(now - startGameTime)
+            if (isTimeToEnd(now)) {
+                endGameLiveData.postValue(null)
+                break
+            }
             val deltaTime = now - lastTime
             lastTime = now
             startDelayedRespawn(deltaTime)
         }
     }
 
+    private fun isTimeToEnd(now: Long) = now - startGameTime >= GAME_END_TIME
+
     private fun startDelayedRespawn(delta: Long) {
         if (delayTime > 0) {
-            delayTime -= delta;
+            delayTime -= delta
         } else {
-            if (checkAllPositions()) {
-                getNewEnemiesCount()
-                respawnEnemy()
-                delayTime = timeToRespawn
-            } else {
-                delayTime++
-            }
+            respawnEnemy()
+            delayTime = BASE_TIME_TO_RESPAWN
         }
-    }
-
-    private fun checkAllPositions(): Boolean {
-        var count = 0
-        for (place in places) {
-            if (place.enemy != null) {
-                count++
-                if (count == places.size) {
-                    return false
-                }
-            }
-        }
-        return true
     }
 
     private fun respawnEnemy() {
-        if (simultaneouslyEnemies > 0) {
-            val pos = selectPosition()
-            pos?.let {
-                places[pos].enemy = Enemy({
+        val pos = Random.nextInt(9)
+        pos.let {
+            places[pos].enemy = Enemy(
+                deadCallback = {
                     places[pos].enemy = null
                     deleteLiveData.postValue(places[pos])
-                }, { alpha ->
+                },
+                updateCallback = { alpha ->
                     animateLiveData.postValue(Pair(places[pos], alpha))
-                }, {
-                    heartLiveData.postValue(null)
-                })
-                places[pos].enemy!!.start()
-                simultaneouslyEnemies--
-                Log.d("Enemies", places.toString())
-            }
-            respawnEnemy()
-        }
-        Log.d("Enemies", "---------------------------------")
-    }
-
-    private fun selectPosition(): Int? {
-        val randomPlace = Random.nextInt(9)
-        return if (places[randomPlace].enemy != null) {
-            null
-        } else {
-            randomPlace
+                }
+            )
+            places[pos].enemy!!.start()
         }
     }
 }
