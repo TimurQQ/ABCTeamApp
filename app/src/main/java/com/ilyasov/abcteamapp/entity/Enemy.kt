@@ -9,7 +9,7 @@ class Enemy(
     Thread() {
     private var deadTimer: Long = BASE_MOVE_SPEED
     private var lastTime = System.nanoTime()
-    var diedFlag = f
+    var diedFlag = false
 
     override fun run() {
         while (!diedFlag) {
